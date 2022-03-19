@@ -11,7 +11,7 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.Map;
 import java.util.HashMap;
 
-public class SnackBarModule extends ReactContextBaseJavaModule {
+class SnackBarModule extends ReactContextBaseJavaModule {
    SnackBarModule(ReactApplicationContext context) {
        super(context);
    }
@@ -31,7 +31,7 @@ public class SnackBarModule extends ReactContextBaseJavaModule {
  
              } 
          }) 
-         .setActionTextColor(getCurrentActivity().getResources().getColor(android.R.color.colorAccent))
+         .setActionTextColor(getCurrentActivity().getResources().getColor(android.R.color.white))
          .show(); 
    }
 
