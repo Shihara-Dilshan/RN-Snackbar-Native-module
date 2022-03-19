@@ -8,16 +8,20 @@ import {
   View,
 } from 'react-native';
 
-const App = () => {
+const App: React.FC  = () => {
   return (
     <SafeAreaView>
       <StatusBar />
-      <View>
+      <View style={styles.container}>
         <Button
-          title="PressMe"
+          title="Native Snack bar"
           onPress={() => {
-            console.log(NativeModules)
-            NativeModules.SnackbarModule.initCustomSnackBar('dffdf');
+            NativeModules.SnackbarModule.initCustomSnackBar(
+              'Native snackbar',
+              () => {
+                console.log('close button pressed');
+              },
+            );
           }}
         />
       </View>
@@ -26,21 +30,12 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
+  container: {
+    height: '100%',
+    alignContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    justifyContent: 'center',
   },
 });
 
